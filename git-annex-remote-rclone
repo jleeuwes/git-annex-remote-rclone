@@ -235,6 +235,7 @@ while read -r line; do
 				else
 					# some other error occured (e.g. a network error)
 					echo CHECKPRESENT-UNKNOWN "$key" "remote currently unavailable or git-annex-remote-rclone failed to parse rclone output"
+					printf "%s\n" "$check_result" | GREP '.*'
 				fi
 			fi
 		;;
